@@ -1,6 +1,8 @@
 <header>
     <div class="header-logo">
-        <img src="media/svg/CyberHydra(Black-H).svg" alt="">
+        <a href="">
+            <img src="media/svg/CyberHydra(Black-H).svg" alt="">
+        </a>
     </div>
     <div class="nav-links">
         <a href="">Servicios</a>
@@ -8,7 +10,29 @@
         <a href="">Contacto</a>
         <a href="">Acerca de Nosotros</a>
     </div>
-    <div class="presupuesto">
-        <a class="presupuesto-button" href="">Pedir Presupuesto</a>
+    <div class="header-buttons">
+        <div class="presupuesto">
+            <a class="presupuesto-button" href="">Pedir Presupuesto</a>
+        </div>
+        <div class="burger-mobile" onclick="burger_menu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
     </div>
+
+    <div id="links-mobile" style="transform: translateY(-120%);">
+        
+        <div class="links-wrapper">
+            <a href="">Servicios</a>
+            <a href="">Planes</a>
+            <a href="">Contacto</a>
+            <a href="">Acerca de Nosotros</a>
+            <div class="presupuesto">
+                <a href="">Pedir Presupuesto</a>
+            </div>
+        </div>
+    
+    </div>
+
 </header>

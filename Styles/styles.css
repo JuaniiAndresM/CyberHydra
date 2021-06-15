@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto");
+/*
+
+
+Variables
+
+
+
+*/
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +14,51 @@
           box-sizing: border-box;
 }
 
+/*
+
+
+
+
+
+
+*/
+/*
+
+
+Scrollbar
+
+
+
+*/
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d89000;
+  border-radius: 10px;
+}
+
+/*
+
+
+
+
+
+
+*/
+/*
+
+
+Scrollbar
+
+
+
+*/
 body {
   background-color: #ffaa00;
   background: url("../media/img/Background.png") no-repeat center center fixed;
@@ -39,6 +92,8 @@ header {
 }
 
 header .header-logo {
+  position: relative;
+  z-index: 3;
   margin: 0 20px;
 }
 
@@ -51,9 +106,27 @@ header .nav-links a {
   color: #333;
   margin-right: 5rem;
   font-size: 1.15rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
-header .presupuesto a {
+header .nav-links a:hover {
+  color: white;
+}
+
+header .header-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header-buttons .presupuesto a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,6 +143,125 @@ header .presupuesto a {
   text-decoration: none;
   margin-right: 5rem;
   border-radius: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header .header-buttons .presupuesto a:hover {
+  background-color: #ffaa00;
+  color: white;
+}
+
+header .header-buttons .burger-mobile {
+  position: relative;
+  z-index: 3;
+  display: none;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+header .header-buttons .burger-mobile .bar1,
+header .header-buttons .burger-mobile .bar2,
+header .header-buttons .burger-mobile .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header #links-mobile {
+  display: none;
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffaa00e0;
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
+header #links-mobile .links-wrapper {
+  width: 100%;
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header #links-mobile .links-wrapper a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 10px 70px;
+}
+
+header #links-mobile .links-wrapper a i {
+  margin: 0 5px;
+}
+
+header #links-mobile .links-wrapper .presupuesto {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #links-mobile .links-wrapper .presupuesto a {
+  padding: 5px 20px;
+  background-color: #333;
+  border-radius: 15rem;
+}
+
+header #links-mobile .links-wrapper a:hover {
+  background-color: #333;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 /*
@@ -118,6 +310,158 @@ Landing
   font-size: 1.5rem;
 }
 
+.landing #arrow {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: arrow 0.5s alternate infinite;
+          animation: arrow 0.5s alternate infinite;
+}
+
+.landing #arrow i {
+  font-size: 2rem;
+  color: white;
+}
+
+/*
+
+
+
+
+
+
+*/
+/*
+
+
+Section Information
+
+
+
+*/
+.information {
+  height: 100vh;
+}
+
+/*
+
+
+
+
+
+
+*/
+/*
+
+
+Animations
+
+
+
+*/
+@-webkit-keyframes arrow {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+@keyframes arrow {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+/*
+
+
+
+
+
+
+*/
+/*
+
+
+Media
+
+
+
+*/
+@media screen and (max-width: 90rem) {
+  header .nav-links {
+    display: none;
+  }
+  header .header-buttons .presupuesto {
+    position: relative;
+    z-index: 3;
+  }
+  header .header-buttons .presupuesto a {
+    margin: 0 20px;
+  }
+  header .header-buttons .burger-mobile {
+    display: block;
+  }
+  header #links-mobile {
+    display: block;
+  }
+  header #links-mobile .links-wrapper .presupuesto {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  header .header-logo img {
+    width: 100%;
+  }
+  header .header-buttons .presupuesto {
+    display: none;
+  }
+  header #links-mobile {
+    display: block;
+  }
+  header #links-mobile .links-wrapper .presupuesto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .landing .landing-information {
+    width: 80%;
+  }
+  .landing .landing-information h1 {
+    font-size: 2rem;
+  }
+  .landing .landing-information p {
+    font-size: 1.2rem;
+  }
+}
+
+/*
+
+
+
+
+
+
+*/
 /*
 
 

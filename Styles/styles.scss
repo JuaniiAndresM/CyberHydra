@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
+//-----------------------------------------------//
+/*
+
+
+Variables
+
+
+
+*/
 $gold-color: #ffaa00;
 $grey-color: #333;
 
@@ -8,7 +17,51 @@ $grey-color: #333;
     padding: 0;
     box-sizing: border-box;
 }
+/*
 
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Scrollbar
+
+
+
+*/
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background-color: $grey-color;
+}
+::-webkit-scrollbar-thumb {
+    background: #d89000;
+    border-radius: 10px;
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Scrollbar
+
+
+
+*/
+  
 body{
     background-color: $gold-color;
     background: url('../media/img/Background.png') no-repeat center center fixed;
@@ -38,6 +91,8 @@ header{
     border-bottom: 1px solid $grey-color;
 
     .header-logo{
+        position: relative;
+        z-index: 3;
         margin: 0 20px;
         img{
             width: 400px;
@@ -49,25 +104,129 @@ header{
             color: $grey-color;
             margin-right: 5rem;
             font-size: 1.15rem;
+            transition: 0.5s;
+        }
+        a:hover{
+            color: white;
         }
     }
-    .presupuesto{
-        a{
+    .header-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .presupuesto{
+            a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                width: 200px;
+                height: 50px;
+    
+                background-color: $grey-color;
+                color: $gold-color;
+                text-decoration: none;
+                margin-right: 5rem;
+                border-radius: 30px;
+
+                transition: 0.3s;
+            }
+            a:hover{
+                background-color: $gold-color;
+                color: white;
+            }
+        }
+        .burger-mobile {
+            position: relative;
+            z-index: 3;
+            display: none;
+            cursor: pointer;
+            margin: 0 20px;
+        
+            .bar1,
+            .bar2,
+            .bar3 {
+              width: 35px;
+              height: 5px;
+              background-color: $grey-color;
+              margin: 6px 0;
+              transition: 0.4s;
+            }
+        }
+
+    }
+    #links-mobile {
+    display: none;
+    transform: translateY(-120%);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffaa00e0;
+    transition: ease-in 0.3s;
+
+        .links-wrapper {
+            width: 100%;
+            height: calc(100vh - 100px);
+            margin-top: 100px;
+
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
 
-            width: 200px;
-            height: 50px;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
+                width: 100%;
+                height: 50px;
+
+                text-align: center;
+                color: white;
+                font-size: 1rem;
+                text-decoration: none;
+                margin: 10px 70px;
+
+                i {
+                    margin: 0 5px;
+                }
+            }
+            .presupuesto{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                a{
+                    padding: 5px 20px;
+                    background-color: $grey-color;
+                    border-radius: 15rem;
+                }
+            }
+            a:hover {
             background-color: $grey-color;
-            color: $gold-color;
-            text-decoration: none;
-            margin-right: 5rem;
-            border-radius: 30px;
+            }
         }
     }
+    
 }
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+  
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+  
 
 /*
 
@@ -106,7 +265,157 @@ Landing
             font-size: 1.5rem;
         }
     }
+
+    #arrow{
+        width: 100%;
+
+        position: absolute;
+        z-index: 1;
+        bottom: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: arrow 0.5s alternate infinite;
+        i{
+            font-size: 2rem;
+            color: white;
+        }
+    }
 }
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Section Information
+
+
+
+*/
+.information{
+    height: 100vh;
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Animations
+
+
+
+*/
+@keyframes arrow{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Media
+
+
+
+*/
+@media screen and (max-width: 90rem){
+    header{
+        .nav-links{
+            display: none;
+        }
+        .header-buttons{
+            .presupuesto{
+                position: relative;
+                z-index: 3;
+                a{
+                    margin: 0 20px;
+                }
+            }
+            .burger-mobile{
+                display: block;
+            }
+        }
+        
+        #links-mobile{
+            display: block;
+            .links-wrapper{
+                .presupuesto{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 50rem){
+    header{
+        .header-logo{
+            img{
+                width: 100%;
+            }
+        }
+        .header-buttons{
+            .presupuesto{
+                display: none;
+            }
+        }
+        #links-mobile{
+            display: block;
+
+            .links-wrapper{
+                .presupuesto{
+                    display: flex;
+                }
+            }
+        }
+    }
+    .landing{
+        .landing-information{
+            h1{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+            width: 80%;
+        }
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
 /*
 
 
