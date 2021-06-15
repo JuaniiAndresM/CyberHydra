@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ffaa00;
+  background: url("../media/img/Background.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Roboto, sans-serif;
+}
+
+/*
+
+
+Header
+
+
+
+*/
+header {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-bottom: 1px solid #333;
+}
+
+header .header-logo {
+  margin: 0 20px;
+}
+
+header .header-logo img {
+  width: 400px;
+}
+
+header .nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 5rem;
+  font-size: 1.15rem;
+}
+
+header .presupuesto a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: #333;
+  color: #ffaa00;
+  text-decoration: none;
+  margin-right: 5rem;
+  border-radius: 30px;
+}
+
+/*
+
+
+
+
+
+
+*/
+/*
+
+
+Landing
+
+
+
+*/
+.landing {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.landing .landing-information {
+  margin: 5%;
+  width: 50%;
+}
+
+.landing .landing-information h1 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.landing .landing-information p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/*
+
+
+
+
+
+
+*/
+/*# sourceMappingURL=styles.css.map */
