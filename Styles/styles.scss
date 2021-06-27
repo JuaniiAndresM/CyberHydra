@@ -10,7 +10,7 @@ Variables
 
 
 */
-$gold-color: #FFA41F;
+$gold-color: #ffaa00;
 $grey-color: #222;
 $white-color: #fff;
 
@@ -18,6 +18,9 @@ $white-color: #fff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
 }
 /*
 
@@ -31,7 +34,7 @@ $white-color: #fff;
 /*
 
 
-Scrollbar
+Scrollbar & ScrollTop Button
 
 
 
@@ -46,6 +49,34 @@ Scrollbar
     background: #d89000;
     border-radius: 10px;
 }
+
+.scrollTop{
+    display: none;
+
+    position: fixed;
+    z-index: 3;
+    bottom: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: $gold-color;
+    border: none;
+    box-shadow: 5px 5px 22px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    i{
+        font-size: 2rem;
+        color: $grey-color;
+    }
+}
+.scrollTop:hover{
+    transform: scale(1.1);
+}
 /*
 
 
@@ -58,14 +89,21 @@ Scrollbar
 /*
 
 
-Scrollbar
+Body
 
 
 
 */
   
 body{
-    background: $gold-color;
+    /*
+    background: url('/CyberHydra/media/img/Background.png') no-repeat center center fixed;
+    background-size: cover;
+    */
+
+    background: linear-gradient(90deg, rgba(255,151,0,1) 0%, rgba(255,192,0,1) 100%);
+
+    //background: $gold-color;
 
     font-family: Comfortaa, sans-serif;
 }
@@ -165,7 +203,7 @@ header{
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: $gold-color;
+    background: linear-gradient(90deg, rgba(255,151,0,1) 0%, rgba(255,192,0,1) 100%);
     transition: ease-in 0.3s;
 
         .links-wrapper{
@@ -250,65 +288,73 @@ Footer
 
 */
 footer{
-    background-color: $grey-color;
-    margin-top: 10px;
+    margin-top: 40px;
 
-    .footer-logo{
-        padding-top: 40px;
-        padding-bottom: 20px;
+    img{
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img{
-            max-width: 30rem;
-            margin: 0 20px;
-        }
+        height: 100px;
+        margin-bottom: -5px;
     }
-    .footer-socialmedia{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
-        padding-top: 20px;
-        padding-bottom: 40px;
-        
-        a{
-            margin: 0 20px;
-            text-decoration: none;
-            
-            i{
-                font-size: 2rem;
-                color: white;
-                transition: 0.5s;
+    .footer-wrapper{
+        background-color: $grey-color;
+
+        .footer-logo{
+            padding: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                max-width: 30rem;
+                margin: 0 20px;
             }
         }
-        a:hover i{
-            color: $gold-color;
-            transform: translateY(-5px);
+        .footer-socialmedia{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            padding-top: 20px;
+            padding-bottom: 40px;
+            
+            a{
+                margin: 0 20px;
+                text-decoration: none;
+                
+                i{
+                    font-size: 2rem;
+                    color: white;
+                    transition: 0.5s;
+                }
+            }
+            a:hover i{
+                color: $gold-color;
+                transform: translateY(-5px);
+            }
         }
-    }
-    .lineanimation{
-        overflow: hidden;
-        width: 100%;
-        height: 5px;
-
-        .line{ 
-            width: 50vw;
+        .lineanimation{
+            overflow: hidden;
+            width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, rgba(0,118,190,0) 0%, rgba(255,170,0,1) 100%);
-            border-radius: 30px;
-
-            animation: line-animation 2s infinite;
+    
+            .line{ 
+                width: 50vw;
+                height: 5px;
+                background: linear-gradient(90deg, rgba(0,118,190,0) 0%, rgba(255,170,0,1) 100%);
+                border-radius: 30px;
+    
+                animation: line-animation 2s infinite;
+            }
         }
-    }
-    .footer-copyright{
-        text-align: center;
-        background-color: #222;
-        padding: 20px 0;
-        p{
-            color: white;
+        .footer-copyright{
+            text-align: center;
+            background-color: #222;
+            padding: 20px 0;
+            p{
+                color: white;
+            }
         }
     }
 }
@@ -378,6 +424,10 @@ Landing
 
             z-index: 2;
             margin-top: -100px;
+
+            img{
+                animation: landing-svg 1s alternate infinite;
+            }
         }
     }
 
@@ -425,6 +475,15 @@ Planes Web
     height: 300px;
     margin: 0;
 }
+.wave-planes-rotate{
+    position: relative;
+    z-index: 0;
+    top: -5px;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    transform: scale(-1);
+}
 .web-planes{
     background-color: #222;
 
@@ -432,14 +491,13 @@ Planes Web
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-    padding: 40px 0;
 
     .planes-h1{
         position: relative;
         z-index: 2;
         color: $gold-color;
         font-size: 2rem;
+        margin-bottom: 40px;
     }
     .planes-wrapper{
         width: 100%;
@@ -456,15 +514,13 @@ Planes Web
             .plan{
                 position: relative;
                 z-index: 2;
-    
-                padding: 20px;
                 margin: 20px;
                 width: 400px;
                 height: 400px;
                 box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
                 border-radius: 1rem;
                 text-align: center;
-                background-color: #222;
+                background-color: rgb(38, 38, 38);
     
                 display: flex;
                 justify-content: center;
@@ -483,7 +539,7 @@ Planes Web
                     }
                 }
                 .price{
-                    color: $gold-color;
+                    color: white;
                     margin-top: 20px;
                     font-size: 1.5rem;
                     font-weight: bold;
@@ -546,6 +602,186 @@ Planes Web
 /*
 
 
+Sobre Nosotros
+
+
+
+*/
+.about-us-wave-top{
+    width: 100%;
+    height: 100px;
+    margin-bottom: -5px;
+}
+.about-us-wave-bottom{
+    width: 100%;
+    height: 100px;
+    transform: scale(-1);
+    margin-top: -5px;
+}
+.about-us-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $grey-color;
+    padding: 40px 0 ;
+
+    .about-us-info-wrapper{
+        width: 90%;
+        display: grid;
+        margin: 20px;
+        grid-template-columns: 40% 1fr;
+
+        .logo{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                max-width: 15rem;
+            }
+        }
+        .about-us-info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h1{
+                color: $gold-color;
+                font-size: 2rem;
+            }
+            p{
+                color: $white-color;
+                margin: 20px 0;
+            }
+        }
+    }
+
+    .titulo-divisor{
+        color: $gold-color;
+        margin: 20px;
+        font-size: 2rem;
+    }
+    .about-us-card-wrapper{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+            
+        margin: 20px 0;     
+
+        .card-wrapper{
+            flex: 1;
+            width: 100%;
+            display: flex;
+            margin: 10px;
+            
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .card{
+                width: 280px;
+                height: 400px;
+                background-color: #333;
+                box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
+                border-radius: 2rem;
+
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+
+                transition: 0.5s;
+                .card-img{
+                    width: 100%;
+                    padding: 20px 0;
+                    background-color: rgb(38, 38, 38);
+                    border-radius: 2rem 2rem 50% 50%;
+                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img{
+                        position: relative;
+                        top: 30px;
+                        background-color: #333;
+                        padding: 10px;
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                    }
+                }
+                .card-body{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    
+                    height: 130px;
+                    h1{
+                        color: $gold-color;
+                        font-size: 1.2rem;
+                        margin: 5px 10px;
+                    }
+                    p{
+                        color: $white-color;
+                        font-size: 0.8rem;
+                    }
+                }
+                .card-body-social{
+                    width: 100%;
+                    height: 100px;
+                    background-color: rgb(38, 38, 38);
+                    border-radius: 2rem;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    transition: 0.5s;
+
+                    a{
+                        text-decoration: none;
+                        color: $white-color;
+
+                        transition: 0.5s;
+
+                        i{
+                            font-size: 2rem;
+                            margin: 10px;
+                        }
+                    }
+                }
+            }
+            .card:hover{
+                transform: scale(1.05);
+                .card-body-social{
+                    height: 200px;
+                    border-radius: 50% 50% 2rem 2rem;
+
+                    a{
+                        color: $gold-color;
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
 Animations
 
 
@@ -568,6 +804,14 @@ Animations
         transform: translateX(100vw);
     }
     
+}
+@keyframes landing-svg{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
 }
 /*
 
@@ -621,7 +865,6 @@ Media
                 .plan, .plan .plan-hover{
                     width: 320px;
                     height: 320px;
-                    padding: 10px;
                     margin: 10px;
 
                     .plan-info-icon{
@@ -634,6 +877,23 @@ Media
         }
     }
 }
+@media screen and (max-width: 60rem) {
+    .about-us-wrapper{
+        padding: 0;
+        .about-us-info-wrapper{
+            grid-template-columns: 1fr;
+            .logo{
+                width: 100%;
+                margin: 20px 0;
+
+                img{
+                    width: 50%;
+                }
+            }
+        }
+    }
+    
+}
 @media screen and (max-width: 68rem){
     .web-planes{
         .planes-wrapper{
@@ -642,7 +902,6 @@ Media
                 .plan, .plan .plan-hover{
                     width: 320px;
                     height: 320px;
-                    padding: 10px;
                     margin: 10px;
 
                     .plan-info-icon{
