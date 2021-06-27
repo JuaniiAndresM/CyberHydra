@@ -1011,6 +1011,135 @@ Sobre Nosotros
 /*
 
 
+Contacto
+
+
+
+*/
+.contacto-wrapper {
+  width: 100%;
+  background-color: #222;
+}
+
+.contacto-wrapper .contacto {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 1fr;
+      grid-template-columns: 40% 1fr;
+}
+
+.contacto-wrapper .contacto .logo {
+  padding: 40px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contacto-wrapper .contacto .logo img {
+  max-width: 300px;
+}
+
+.contacto-wrapper .contacto .contacto-form {
+  width: 100%;
+  padding: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container {
+  max-width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container h1 {
+  color: #ffaa00;
+  margin: 5px 0;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container p {
+  color: #888;
+  margin: 5px 0;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper {
+  width: 100%;
+  text-align: left;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper p {
+  color: #fff;
+  margin: 10px 0;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper input, .contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper textarea {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid #ffaa00;
+  border-radius: 1rem;
+  outline: none;
+  color: #fff;
+  padding: 10px;
+  font-family: Comfortaa, sans-serif;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper input:-webkit-autofill,
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper input:-webkit-autofill:hover,
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper input:-webkit-autofill:focus,
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #ffaa00 !important;
+}
+
+.contacto-wrapper .contacto .contacto-form .contacto-container .input-wrapper textarea {
+  padding: 10px;
+  height: 200px;
+  resize: none;
+}
+
+/*
+
+
+
+
+
+
+*/
+/*
+
+
 Animations
 
 
@@ -1131,6 +1260,22 @@ Media
   }
 }
 
+@media screen and (max-width: 68rem) {
+  .web-planes .planes-wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .web-planes .planes-wrapper .plan-wrapper .plan, .web-planes .planes-wrapper .plan-wrapper .plan .plan-hover {
+    width: 320px;
+    height: 320px;
+    margin: 10px;
+  }
+  .web-planes .planes-wrapper .plan-wrapper .plan .plan-info-icon, .web-planes .planes-wrapper .plan-wrapper .plan .plan-hover .plan-info-icon {
+    margin-top: 270px;
+    margin-left: 270px;
+  }
+}
+
 @media screen and (max-width: 60rem) {
   .about-us-wrapper {
     padding: 0;
@@ -1148,23 +1293,23 @@ Media
   }
 }
 
-@media screen and (max-width: 68rem) {
-  .web-planes .planes-wrapper {
+@media screen and (max-width: 50rem) {
+  .contacto-wrapper .contacto {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .web-planes .planes-wrapper .plan-wrapper .plan, .web-planes .planes-wrapper .plan-wrapper .plan .plan-hover {
-    width: 320px;
-    height: 320px;
-    margin: 10px;
+  .contacto-wrapper .contacto .contacto-form {
+    padding: 5px;
   }
-  .web-planes .planes-wrapper .plan-wrapper .plan .plan-info-icon, .web-planes .planes-wrapper .plan-wrapper .plan .plan-hover .plan-info-icon {
-    margin-top: 270px;
-    margin-left: 270px;
+  .contacto-wrapper .contacto .contacto-form .contacto-container {
+    width: 90%;
   }
-}
-
-@media screen and (max-width: 50rem) {
+  .contacto-wrapper .contacto .logo {
+    display: none;
+  }
+  .contacto-wrapper .contacto .logo img {
+    width: 200px;
+  }
   header .header-logo img {
     width: 100%;
   }

@@ -791,6 +791,107 @@ Sobre Nosotros
 /*
 
 
+Contacto
+
+
+
+*/
+.contacto-wrapper{
+    width: 100%;
+    background-color: $grey-color;
+    .contacto{
+        display: grid;
+        grid-template-columns: 40% 1fr;
+
+        .logo{
+            padding: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                max-width: 300px;
+            }
+        }
+        .contacto-form{
+            width: 100%;
+
+            padding: 40px 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .contacto-container{
+                max-width: 400px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                h1{
+                    color: $gold-color;
+                    margin: 5px 0;
+                }
+                p{
+                    color: #888;
+                    margin: 5px 0;
+                }
+
+                .input-wrapper{
+                    width: 100%;
+                    text-align: left;
+
+                    p{
+                        color: $white-color;
+                        margin: 10px 0;
+                    }
+
+                    input, textarea{
+                        width: 100%;
+                        height: 50px;
+
+                        background-color: transparent;
+                        border: 1px solid $gold-color;
+                        border-radius: 1rem;
+                        outline: none;
+                        color: $white-color;
+                        padding: 10px;
+                        font-family: Comfortaa, sans-serif;
+                    }
+                    input:-webkit-autofill,
+                    input:-webkit-autofill:hover,
+                    input:-webkit-autofill:focus,
+                    input:-webkit-autofill:active {
+                        transition: background-color 5000s ease-in-out 0s;
+                        -webkit-text-fill-color: $gold-color !important;
+                    }
+                    textarea{
+                        padding: 10px;
+                        height: 200px;
+                        resize: none;
+                    }
+                }
+            }
+        }
+
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
 Animations
 
 
@@ -886,23 +987,6 @@ Media
         }
     }
 }
-@media screen and (max-width: 60rem) {
-    .about-us-wrapper{
-        padding: 0;
-        .about-us-info-wrapper{
-            grid-template-columns: 1fr;
-            .logo{
-                width: 100%;
-                margin: 20px 0;
-
-                img{
-                    width: 50%;
-                }
-            }
-        }
-    }
-    
-}
 @media screen and (max-width: 68rem){
     .web-planes{
         .planes-wrapper{
@@ -923,7 +1007,42 @@ Media
         }
     }
 }
+@media screen and (max-width: 60rem) {
+    .about-us-wrapper{
+        padding: 0;
+        .about-us-info-wrapper{
+            grid-template-columns: 1fr;
+            .logo{
+                width: 100%;
+                margin: 20px 0;
+
+                img{
+                    width: 50%;
+                }
+            }
+        }
+    }
+    
+}
 @media screen and (max-width: 50rem){
+    .contacto-wrapper{
+        .contacto{
+            grid-template-columns: 1fr;
+
+            .contacto-form{
+                padding: 5px;
+                .contacto-container{
+                    width: 90%;
+                }
+            }
+            .logo{
+                display: none;
+                img{
+                    width: 200px;
+                }
+            }
+        }
+    }
     header{
         .header-logo{
             img{
