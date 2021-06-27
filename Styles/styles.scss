@@ -729,6 +729,15 @@ Sobre Nosotros
                     p{
                         color: $white-color;
                         font-size: 0.8rem;
+                        margin: 3px 0;
+                    }
+                    .mail{
+                        color: $gold-color;
+                        font-size: 0.8rem;
+                        text-decoration: none;
+                    }
+                    .mail:hover{
+                        color: #777;
                     }
                 }
                 .card-body-social{
