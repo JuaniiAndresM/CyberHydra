@@ -145,9 +145,20 @@ header{
             font-size: 1.15rem;
             transition: 0.5s;
         }
-        a:hover{
-            color: $grey-color;
-            font-weight: bold;
+        a::after{
+            content: '';
+            position: relative;
+            display: block;
+            top: 10px;
+
+            margin: auto;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width .3s;
+        }
+        a:hover::after{
+            width: 100%;
         }
     }
     .header-buttons{
@@ -765,6 +776,15 @@ Sobre Nosotros
                             margin: 10px;
                         }
                     }
+                    a:after{
+                        content: '';
+                        display: block;
+                        margin: auto;
+                        width: 0;
+                        height: 2px;
+                        background-color: $gold-color;
+                        transition: width .3s;
+                    }
                 }
             }
             .card:hover{
@@ -775,6 +795,9 @@ Sobre Nosotros
 
                     a{
                         color: $gold-color;
+                    }
+                    a:hover::after{
+                        width: 100%;
                     }
                 }
             }

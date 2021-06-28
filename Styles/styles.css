@@ -153,9 +153,21 @@ header .nav-links a {
   transition: 0.5s;
 }
 
-header .nav-links a:hover {
-  color: #222;
-  font-weight: bold;
+header .nav-links a::after {
+  content: '';
+  position: relative;
+  display: block;
+  top: 10px;
+  margin: auto;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
+header .nav-links a:hover::after {
+  width: 100%;
 }
 
 header .header-buttons {
@@ -991,6 +1003,17 @@ Sobre Nosotros
   margin: 10px;
 }
 
+.about-us-wrapper .about-us-card-wrapper .card-wrapper .card .card-body-social a:after {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 0;
+  height: 2px;
+  background-color: #ffaa00;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
 .about-us-wrapper .about-us-card-wrapper .card-wrapper .card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -1003,6 +1026,10 @@ Sobre Nosotros
 
 .about-us-wrapper .about-us-card-wrapper .card-wrapper .card:hover .card-body-social a {
   color: #ffaa00;
+}
+
+.about-us-wrapper .about-us-card-wrapper .card-wrapper .card:hover .card-body-social a:hover::after {
+  width: 100%;
 }
 
 /*
