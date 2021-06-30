@@ -2,6 +2,8 @@ $( document ).ready(function(){
     $('#header').load('/CyberHydra/Page/header.html');
     $('#footer').load('/CyberHydra/Page/footer.html');
 
+    $(".loading-screen").fadeOut("slow");
+
 });
 
 function burger_menu(x) {

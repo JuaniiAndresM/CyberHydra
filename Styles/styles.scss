@@ -486,7 +486,7 @@ Planes Web
     height: 300px;
     margin: 0;
 }
-.wave-planes-rotate{
+.wave-planes-rotate, .wave-bottom{
     position: relative;
     z-index: 0;
     top: -5px;
@@ -494,6 +494,14 @@ Planes Web
     height: 200px;
     margin: 0;
     transform: scale(-1);
+}
+.wave-top{
+    position: relative;
+    z-index: 0;
+    top: 5px;
+    width: 100%;
+    height: 200px;
+    margin: 0;
 }
 .web-planes{
     background-color: #222;
@@ -513,16 +521,14 @@ Planes Web
     .planes-wrapper{
         width: 100%;
         display: flex;
+        justify-content: space-evenly;
         flex-wrap: wrap;
 
         .plan-wrapper{
-            flex: 1;
-            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin: 10px 0;
 
             .plan{
                 position: relative;
@@ -572,7 +578,6 @@ Planes Web
                 h1{
                     color: $gold-color;
                 }
-    
                 .plan-hover{
                     position: absolute;
                     width: 400px;
@@ -592,13 +597,147 @@ Planes Web
                     text-align: left;
     
                     p{
-                        margin: 20px;
+                        margin: 10px 20px;
                         color: white;
                     }
                 }
             }
             .plan:hover .plan-hover{
                 opacity: 1;
+            }
+        }
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Nuestros Servicios
+
+
+
+*/
+.servicios{
+    background: $grey-color;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+        color: $gold-color;
+        margin: 20px auto;
+        font-size: 2em;
+    }
+
+    .web-design, .responsive-design{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .img-wrapper{
+            padding: 20px;
+            img{
+                max-width: 300px;
+                animation: img-services 1.5s alternate infinite;
+            }
+        }
+        .web-design__info{
+            margin: 20px;
+            max-width: 900px;
+            h3{
+                color: $gold-color;
+                font-size: 1.5em;
+                margin: 10px 0;
+            }
+            p{
+                color: #666;
+                margin: 10px 0;
+            }
+        }
+    }
+    .responsive-design{
+          flex-wrap: wrap-reverse;  
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Portfolio
+
+
+
+*/
+.portfolio{
+    background: $grey-color;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+        color: $gold-color;
+        font-size: 2em;
+    }
+    p{
+        color: #777;
+        margin: 10px 0;
+    }
+
+    .portfolio-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+        margin: 0 20%;
+
+        .left-arrow{
+            position: absolute;
+            left: 10%;
+
+            i{
+                font-size: 2em;
+                color: white;
+            }
+        }
+        .right-arrow{
+            position: absolute;
+            right: 10%;
+
+            i{
+                font-size: 2em;
+                color: white;
+            }
+        }
+
+        .proyecto{
+            margin: 10px;
+            width: 300px;
+
+            img{
+                width: 100%;
             }
         }
     }
@@ -680,19 +819,18 @@ Sobre Nosotros
     .about-us-card-wrapper{
         width: 100%;
         display: flex;
+        justify-content: space-evenly;
         flex-wrap: wrap;
             
         margin: 20px 0;     
 
         .card-wrapper{
-            flex: 1;
-            width: 100%;
             display: flex;
-            margin: 10px;
             
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin: 10px;
 
             .card{
                 width: 280px;
@@ -825,12 +963,13 @@ Contacto
     width: 100%;
     background-color: $grey-color;
     .contacto{
-        display: grid;
-        grid-template-columns: 40% 1fr;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         .logo{
             padding: 40px;
-            width: 100%;
+            width: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -840,9 +979,8 @@ Contacto
             }
         }
         .contacto-form{
-            width: 100%;
-
-            padding: 40px 0;
+            max-width: 1500px;
+            padding: 40px;
 
             display: flex;
             justify-content: center;
@@ -850,20 +988,21 @@ Contacto
             flex-direction: column;
 
             .contacto-container{
-                max-width: 400px;
+                width: 100%;
 
                 display: flex;
                 justify-content: center;
-                align-items: center;
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
+
                 h1{
+                    font-size: 2em;
                     color: $gold-color;
                     margin: 5px 0;
                 }
                 p{
                     color: #888;
-                    margin: 5px 0;
+                    margin: 10px 0;
                 }
 
                 .input-wrapper{
@@ -880,29 +1019,92 @@ Contacto
                         height: 50px;
 
                         background-color: transparent;
-                        border: 1px solid $gold-color;
-                        border-radius: 1rem;
+                        border: none;
+                        border-bottom: 1px solid $gold-color;
                         outline: none;
                         color: $white-color;
+                        margin: 7px 0;
                         padding: 10px;
+
                         font-family: Comfortaa, sans-serif;
-                    }
-                    input:-webkit-autofill,
-                    input:-webkit-autofill:hover,
-                    input:-webkit-autofill:focus,
-                    input:-webkit-autofill:active {
-                        transition: background-color 5000s ease-in-out 0s;
-                        -webkit-text-fill-color: $gold-color !important;
+                        font-size: 1em;
                     }
                     textarea{
                         padding: 10px;
                         height: 200px;
                         resize: none;
                     }
+
+                    input[type=submit]{
+                        width: 100%;
+                        margin: 10px auto;
+                        background-color: $gold-color;
+                        color: $grey-color;
+                        font-weight: bold;
+                        cursor: pointer;
+                        border: none;
+                        
+                    }
+                    input[type=submit]:hover{
+                        background: #d89000;
+                    }
+                    input:focus, textarea:focus{
+                        border-bottom: 1px solid #fff;
+                        background: linear-gradient(to bottom, transparent, #333);
+                    }
+                    input:-webkit-autofill,
+                    input:-webkit-autofill:hover,
+                    input:-webkit-autofill:focus,
+                    input:-webkit-autofill:active {
+                        transition: background-color 5000s ease-in-out 0s;
+                        -webkit-text-fill-color: white !important;
+                    }
                 }
             }
         }
 
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Loader
+
+
+
+*/
+.loading-screen{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    background-color: $grey-color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loading-icon{
+        width: 40px;
+        height: 40px;
+
+        border: 7px solid #333;
+        border-top: 7px solid $gold-color;
+        border-radius: 50%;
+
+        animation: spinner 1s linear infinite;
     }
 }
 /*
@@ -948,6 +1150,22 @@ Animations
         transform: scale(1.1);
     }
 }
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes img-services{
+    0%{
+        transform: translateY(0) scale(1);
+    }
+    100%{
+        transform: translateY(-20px) scale(1.1);
+    }
+}
 /*
 
 
@@ -973,7 +1191,7 @@ Media
         .header-buttons{
             .presupuesto{
                 position: relative;
-                z-index: 3;
+                z-index: 4;
                 a{
                     margin: 0 20px;
                 }
@@ -1052,16 +1270,14 @@ Media
 @media screen and (max-width: 50rem){
     .contacto-wrapper{
         .contacto{
-            grid-template-columns: 1fr;
-
             .contacto-form{
                 padding: 5px;
                 .contacto-container{
                     width: 90%;
+                    text-align: center;
                 }
             }
             .logo{
-                display: none;
                 img{
                     width: 200px;
                 }

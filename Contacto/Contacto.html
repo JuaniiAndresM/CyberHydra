@@ -25,6 +25,10 @@
   <body>
     <div id="header"></div>
 
+    <section class="loading-screen">
+      <div class="loading-icon"><span class="loading-circle"></span></div>
+    </section>
+
     <button class="scrollTop" id="scrollTop" onclick="topFunction()">
       <i class="fas fa-angle-up"></i>
     </button>
@@ -44,12 +48,9 @@
                     <h1>Contacto</h1>
                     <p>Comunicate con nosotros si tenes alguna duda y te responderemos a la brevedad.</p>
                     <form class="input-wrapper" action="/CyberHydra/">
-                        <p>Nombre</p>
-                        <input type="text" name="nombre" required>
-                        <p>Correo Electronico:</p>
-                        <input type="email" name="email" required>
-                        <p>Comentario:</p>
-                        <textarea type="text" name="comentario" required></textarea>
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo Electronico" required>
+                        <textarea type="text" name="comentario" placeholder="Comentario" required></textarea>
                         <input type="submit">
                     </div>
                 </div>
