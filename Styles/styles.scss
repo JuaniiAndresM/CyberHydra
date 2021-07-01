@@ -662,7 +662,7 @@ Nuestros Servicios
                 margin: 10px 0;
             }
             p{
-                color: #666;
+                color: #777;
                 margin: 10px 0;
             }
         }
@@ -819,7 +819,7 @@ Sobre Nosotros
                 font-size: 2rem;
             }
             p{
-                color: $white-color;
+                color: #777;
                 margin: 20px 0;
             }
         }
@@ -1077,6 +1077,63 @@ Contacto
             }
         }
 
+    }
+}
+/*
+
+
+
+
+
+
+*/
+//-----------------------------------------------//
+/*
+
+
+Proyectos
+
+
+
+*/
+.project-chessuy{
+    background: $grey-color;
+    width: 100%;
+    padding: 40px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+        color: $gold-color;
+        margin: 10px 0;
+    }
+    p{
+        color: #777;
+    }
+
+    .chessuy{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        .chessuy-logo{
+            margin: 40px;
+            max-width: 400px;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .chessuy-info{
+            max-width: 800px;
+            margin: 20px;
+        }
     }
 }
 /*

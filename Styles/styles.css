@@ -832,7 +832,7 @@ Nuestros Servicios
 }
 
 .servicios .web-design .web-design__info p, .servicios .responsive-design .web-design__info p {
-  color: #666;
+  color: #777;
   margin: 10px 0;
 }
 
@@ -1047,7 +1047,7 @@ Sobre Nosotros
 }
 
 .about-us-wrapper .about-us-info-wrapper .about-us-info p {
-  color: #fff;
+  color: #777;
   margin: 20px 0;
 }
 
@@ -1387,6 +1387,78 @@ Contacto
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: white !important;
+}
+
+/*
+
+
+
+
+
+
+*/
+/*
+
+
+Proyectos
+
+
+
+*/
+.project-chessuy {
+  background: #222;
+  width: 100%;
+  padding: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.project-chessuy h1 {
+  color: #ffaa00;
+  margin: 10px 0;
+}
+
+.project-chessuy p {
+  color: #777;
+}
+
+.project-chessuy .chessuy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.project-chessuy .chessuy .chessuy-logo {
+  margin: 40px;
+  max-width: 400px;
+}
+
+.project-chessuy .chessuy .chessuy-logo img {
+  width: 100%;
+}
+
+.project-chessuy .chessuy .chessuy-info {
+  max-width: 800px;
+  margin: 20px;
 }
 
 /*
